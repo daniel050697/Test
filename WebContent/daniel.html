@@ -4,8 +4,15 @@
 <meta charset="ISO-8859-1">
 <title>Daniel</title>
 <script src="js/angular.js"></script>
+<script src="js/demoAngular.js"></script>
 </head>
 <body>
 <h1>Pagina angularJS Daniel</h1>
+<div ng-controller="ctrl">
+	Ricerca:<input type="text" name="research" ng-model="re"> <br/><br/>
+		<ul>
+			<li ng-repeat="cust in customers | filter: re | orderBy: 'city' ">{{ cust.name }} | {{cust.city}}</li>
+		</ul>
+</div>
 </body>
 </html>
